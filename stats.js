@@ -3,6 +3,9 @@
 const os = require('os')
 /* desestruturando o freemem e totalmem */
 
+/* importando a função log do projeto loger.js */
+const log = require('./logger')
+
 /* Usando o SetInterval */
 setInterval(() => {
     const { freemem, totalmem } = os
@@ -21,6 +24,11 @@ setInterval(() => {
     console.clear()
     console.log("===== PC STATS =====")
     console.table(stats)
+    /* transformando o resultado do log em json */
+    log(`${JSON.stringify(stats)}\n`)
+
 }, 1000)
+
+
 
 
