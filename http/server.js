@@ -7,6 +7,7 @@ const path = require("path")
 http.createServer((req, res) => {
 
     const file = req.url === '/' ? 'index.html' : req.url
+    const filePath = path.join(__dirname, 'public', file)
 
     console.log(file)
 
@@ -14,7 +15,7 @@ http.createServer((req, res) => {
 
     /* validação para a página principal */
         fs.readFile(
-            path.join(__dirname, 'public', 'index.html'),
+            filePath,
             (err, content) => {
                 if (err) throw err
 
