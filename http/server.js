@@ -9,6 +9,13 @@ http.createServer((req, res) => {
     const file = req.url === '/' ? 'index.html' : req.url
     const filePath = path.join(__dirname, 'public', file)
 
+    const extname = path.extname(filePath)
+
+    const alloweFileTypes = ['.html', '.css', '.js']
+    const allowed = alloweFileTypes.find(item => item == extname)
+
+    if (!allowed) return
+
     console.log(file)
 
     
