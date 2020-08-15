@@ -20,7 +20,11 @@ function writeFile(cb) {
 /* criando a função de requisição e respostas das páginas html */
 http.createServer((req, res) => {
     const { name, url, del } = URL.parse(req.url, true).query
-/* ALL resources */
+
+    res.writeHead(200, {
+        'Access-Control-Allow-Origin': '*'
+    })
+    /* ALL resources */
     if (!name || !url) {
         return res.end(JSON.stringify(data))
     }
