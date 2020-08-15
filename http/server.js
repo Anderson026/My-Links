@@ -32,4 +32,3 @@ http.createServer((req, res) => {
     /* definindo a porta de comunicação do servidor */
 }).listen(5000, () => console.log('Server is running'))
 
-/* Parei aos 58:30 do vídeo de node da Rocketseat */
